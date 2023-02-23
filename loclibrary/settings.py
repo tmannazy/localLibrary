@@ -28,7 +28,17 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-mykjj=6sd5s5%#
 # DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = []
+# Development hosts
+# ALLOWED_HOSTS = ['.railway.com', '127.0.0.1']
+
+# Production hosts
+ALLOWED_HOSTS = ['locallibrary-production-1dba.up.railway.app', '127.0.0.1']
+
+# During development
+CSRF_TRUSTED_ORIGINS = ['https://*.railway.app']
+
+# During production
+CSRF_TRUSTED_ORIGINS = ['https://locallibrary-production-1dba.up.railway.app']
 
 
 # Application definition
